@@ -41,6 +41,9 @@ install() {
     inst_simple "$moddir/ignition-quench.ign" \
         "/usr/lib/ignition/base.ign"
 
+    inst_simple "$moddir/hello-world.ign" \
+        "/usr/lib/ignition/default.ign"
+
 #   inst_simple "$moddir/ignition-quench.service" \
 #       "$systemdsystemunitdir/ignition-quench.service"
 
