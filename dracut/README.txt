@@ -12,10 +12,9 @@
 git clone https://github.com/dustymabe/bootengine.git
 rsync -avh ./bootengine/dracut/* /usr/lib/dracut/modules.d/
 
-dracut --add 'url-lib network ignition usr-generator' --install /usr/bin/ignition --force --verbose -N
+dracut --force --verbose -N
 
 rm /etc/machine-id
-touch /coreos_first_boot
-add 'ip=dhcp rd.neednet=1 coreos.first_boot' to grub.cfg
+add 'ip=dhcp rd.neednet=1 enforcing=0 coreos.first_boot' to /boot/grub2/grub.cfg
 
 reboot
